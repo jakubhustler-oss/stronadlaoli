@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Hasło</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background-color: #111;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            z-index: 2;
+        }
+
+        h1 {
+            color: white;
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 18px;
+            border: none;
+            outline: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            background-color: red;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: yellow;
+            color: black;
+        }
+
+        .hint {
+            font-size: 18px;
+            color: yellow;
+            display: block;
+            margin-top: 10px;
+        }
+
+        /* Obrazki zamiast figur */
+
+        .img1 {
+            position: absolute;
+            width: 220px;
+            top: 15%;
+            left: 5%;
+        }
+
+        .img2 {
+            position: absolute;
+            width: 220px;
+            bottom: 10%;
+            right: 5%;
+        }
+
+    </style>
+</head>
+<body>
+
+<img src="miauhaus.png" class="img1">
+<img src="lovecats.jpg" class="img2">
+
+<div class="container">
+    <h1>Podaj hasło <span class="hint">(Podpowiedź: pewna data)</span></h1>
+    <input type="password" id="password" placeholder="Wpisz hasło">
+    <button onclick="checkPassword()">OK</button>
+</div>
+
+<script>
+function checkPassword() {
+    const password = document.getElementById("password").value;
+
+    if (password === "17.07.25") {
+        window.location.href = "love.html";
+    } else {
+        alert("Złe hasło!");
+    }
+}
+</script>
+
+</body>
+</html>

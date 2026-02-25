@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Kocham Cię</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: pink;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            font-size: 80px;
+            margin-top: 40px;
+            color: white;
+        }
+
+        .cats {
+            margin-top: 50px;
+        }
+
+        .cat {
+            width: 200px;
+            height: 200px;
+            margin: 20px;
+            cursor: pointer;
+        }
+
+        .meow {
+            font-size: 40px;
+            color: purple;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>KOCHAM CIĘ</h1>
+
+<div class="cats" id="catsContainer">
+
+    <img src="syjamski.jpg" class="cat" onclick="meow(this)">
+    <img src="cat.jpg" class="cat" onclick="meow(this)">
+    <img src="images.jpg" class="cat" onclick="meow(this)">
+
+</div>
+
+<script>
+function meow(element) {
+    const parent = element.parentElement;
+
+    element.style.display = "none";
+
+    const text = document.createElement("div");
+    text.className = "meow";
+    text.innerText = "meow!";
+
+    parent.appendChild(text);
+
+    setTimeout(() => {
+        text.remove();
+        element.style.display = "inline";
+    }, 5000);
+}
+</script>
+
+</body>
+</html>
